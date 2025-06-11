@@ -1,4 +1,3 @@
-// @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
@@ -6,14 +5,11 @@ import Card from "@mui/material/Card";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
-// Material Dashboard 2 React example components
+// Material Dashboard 2 React layout components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
-// Tabla dinámica
-import UsersTable from "layouts/profile/data/UsersTable";
-
-function Overview() {
+function ReporteAuditoria() {
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -32,11 +28,8 @@ function Overview() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  Usuarios
+                  Tiendas Línea Estética
                 </MDTypography>
-              </MDBox>
-              <MDBox pt={3}>
-                <UsersTable />
               </MDBox>
             </Card>
           </Grid>
@@ -46,4 +39,4 @@ function Overview() {
   );
 }
 
-export default Overview;
+export default ReporteAuditoria;

@@ -10,10 +10,10 @@ import MDTypography from "components/MDTypography";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
-// Tabla dinámica
-import UsersTable from "layouts/profile/data/UsersTable";
+// Data
+import TableStores from "layouts/stores/data/TableStores";
 
-function Overview() {
+function Tables() {
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -32,11 +32,11 @@ function Overview() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  Usuarios
+                  Tiendas Línea Estética
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
-                <UsersTable />
+                <TableStores />
               </MDBox>
             </Card>
           </Grid>
@@ -46,4 +46,4 @@ function Overview() {
   );
 }
 
-export default Overview;
+export default Tables;

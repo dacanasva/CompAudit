@@ -1,17 +1,3 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 function navbar(theme, ownerState) {
   const { palette, boxShadows, functions, transitions, breakpoints, borders } = theme;
   const { transparentNavbar, absolute, light, darkMode } = ownerState;
@@ -104,11 +90,11 @@ const navbarRow = ({ breakpoints }, { isMini }) => ({
   },
 });
 
-const navbarIconButton = ({ typography: { size }, breakpoints }) => ({
+const navbarIconButton = ({ breakpoints }) => ({
   px: 1,
 
   "& .material-icons, .material-icons-round": {
-    fontSize: `${size.xl} !important`,
+    fontSize: "2rem !important",
   },
 
   "& .MuiTypography-root": {
