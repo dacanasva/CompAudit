@@ -5,6 +5,8 @@ import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
 import ReporteAuditoria from "layouts/reportAuditoria";
+import LoadAuditPhotos from "layouts/auditPhotos";
+import ResetPassword from "layouts/authentication/reset-password";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
@@ -41,6 +43,7 @@ const routes = [
     icon: <Icon fontSize="small">login</Icon>,
     route: "/authentication/sign-in",
     component: <SignIn />,
+    hidden: true,
   },
   {
     type: "collapse",
@@ -49,6 +52,7 @@ const routes = [
     icon: <Icon fontSize="small">assignment</Icon>,
     route: "/authentication/sign-up",
     component: <SignUp />,
+    hidden: true,
   },
   {
     type: "collapse",
@@ -57,6 +61,22 @@ const routes = [
     icon: <Icon fontSize="small">assessment</Icon>,
     route: "/reporteAuditoria",
     component: <ReporteAuditoria />,
+  },
+  {
+    type: "collapse",
+    name: "Evidencia auditoria", // ← Nombre visible en el menú lateral
+    key: "loadAuditPhotos", // ← Clave única del ítem(tu la colas usarás para identificarlo)
+    icon: <Icon fontSize="small">photos</Icon>, // ← Ícono que se muestra
+    route: "/loadAuditPhotos", // Nombre de la funcion en el index.js
+    component: <LoadAuditPhotos />, // ← Componente que se carga desde la import
+  },
+  {
+    type: "collapse",
+    name: "Recuperar contraseña",
+    key: "ResetPasswordCover",
+    icon: <Icon fontSize="small">password</Icon>,
+    route: "/ResetPasswordCover",
+    component: <ResetPassword />,
   },
 ];
 

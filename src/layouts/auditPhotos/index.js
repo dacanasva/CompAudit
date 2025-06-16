@@ -1,21 +1,18 @@
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-import { Link } from "react-router-dom";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-import MDButton from "components/MDButton";
 
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
-// Tabla dinámica
-import UsersTable from "layouts/profile/data/UsersTable";
+import AuditPhotos from "layouts/auditPhotos/data/auditPhotoEvidence";
 
-function Overview() {
+function loadAuditPhotosPOS() {
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -33,26 +30,19 @@ function Overview() {
                 borderRadius="lg"
                 coloredShadow="info"
               >
-                <MDBox display="flex" justifyContent="space-between" alignItems="center">
-                  <MDTypography variant="h6" color="white">
-                    Usuarios
-                  </MDTypography>
-                  <Link to="/agregar-usuario" style={{ textDecoration: "none" }}>
-                    <MDButton variant="contained" color="light" size="small">
-                      Agregar Usuario
-                    </MDButton>
-                  </Link>
-                </MDBox>
+                <MDTypography variant="h6" color="white">
+                  Evidencias de Auditoría por Punto de Venta
+                </MDTypography>
               </MDBox>
               <MDBox pt={3}>
-                <UsersTable />
+                <AuditPhotos />
               </MDBox>
             </Card>
           </Grid>
         </Grid>
-      </MDBox>
+      </MDBox>{" "}
     </DashboardLayout>
   );
 }
 
-export default Overview;
+export default loadAuditPhotosPOS;

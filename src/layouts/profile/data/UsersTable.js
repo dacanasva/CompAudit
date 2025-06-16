@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 
 // Material Dashboard components
 import MDBox from "components/MDBox";
@@ -11,17 +13,32 @@ import Tooltip from "@mui/material/Tooltip";
 import DataTable from "examples/Tables/DataTable";
 
 function UsersTable() {
-  const [columns] = useState([
-    { Header: "Usuario", accessor: "usuario", align: "left" },
-    { Header: "Correo", accessor: "correo", align: "left" },
-    { Header: "Contraseña", accessor: "contrasena", align: "left" },
-    { Header: "Acciones", accessor: "acciones", align: "center" },
-  ]);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  // Columnas condicionales según tamaño de pantalla
+  const [columns, setColumns] = useState([]);
 
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
-    // Coloca la URL de la API
+    // Definir columnas dependiendo del tamaño de pantalla
+    const baseColumns = [
+      { Header: "Usuario", accessor: "usuario", align: "left" },
+      { Header: "Acciones", accessor: "acciones", align: "center" },
+    ];
+
+    const fullColumns = [
+      { Header: "Usuario", accessor: "usuario", align: "left" },
+      { Header: "Correo", accessor: "correo", align: "left" },
+      { Header: "Contraseña", accessor: "contrasena", align: "left" },
+      { Header: "Acciones", accessor: "acciones", align: "center" },
+    ];
+
+    setColumns(isMobile ? baseColumns : fullColumns);
+  }, [isMobile]);
+
+  useEffect(() => {
     axios.get("").then((response) => {
       const data = response.data;
 

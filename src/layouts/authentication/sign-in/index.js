@@ -13,6 +13,8 @@ import MDTypography from "components/MDTypography";
 import MDInput from "components/MDInput";
 import MDButton from "components/MDButton";
 
+import brandWhite from "assets/images/logo-CompAudit2.png";
+
 // Authentication layout components
 import BasicLayout from "layouts/authentication/components/BasicLayout";
 
@@ -29,19 +31,20 @@ function Basic() {
       <Card>
         <MDBox
           variant="gradient"
-          bgColor="info"
           borderRadius="lg"
-          coloredShadow="info"
           mx={2}
           mt={-3}
           p={2}
           mb={1}
           textAlign="center"
+          sx={{
+            backgroundColor: "#9165cc",
+            boxShadow: "0px 4px 20px rgba(145, 101, 204, 0.5)", // efecto similar a coloredShadow="info"
+          }}
         >
-          <MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-            Iniciar sesión
-          </MDTypography>
+          <img src={brandWhite} alt="Logo CompuAudit" style={{ height: 130 }} />
         </MDBox>
+
         <MDBox pt={4} pb={3} px={3}>
           <MDBox component="form" role="form">
             <MDBox mb={2}>
@@ -63,22 +66,34 @@ function Basic() {
               </MDTypography>
             </MDBox>
             <MDBox mt={4} mb={1}>
-              <MDButton variant="gradient" color="info" fullWidth>
+              <MDButton
+                variant="gradient"
+                fullWidth
+                sx={{
+                  backgroundColor: "#9165cc",
+                  color: "#ffffff",
+                  "&:hover": {
+                    backgroundColor: "#7a51b3", // tono más oscuro al pasar el mouse
+                  },
+                }}
+              >
                 iniciar sesión
               </MDButton>
             </MDBox>
             <MDBox mt={3} mb={1} textAlign="center">
               <MDTypography variant="button" color="text">
-                ¿No&apos; tienes una cuenta?{" "}
+                ¿Olvidaste tu contraseña?{" "}
                 <MDTypography
                   component={Link}
-                  to="/authentication/sign-up"
+                  to="/authentication/reset-password"
                   variant="button"
-                  color="info"
                   fontWeight="medium"
                   textGradient
+                  sx={{
+                    color: "#7a51b3",
+                  }}
                 >
-                  registrarse
+                  Recuperar
                 </MDTypography>
               </MDTypography>
             </MDBox>
