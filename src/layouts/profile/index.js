@@ -37,7 +37,7 @@ function Overview() {
                   <MDTypography variant="h6" color="white">
                     Usuarios
                   </MDTypography>
-                  <Link to="/agregar-usuario" style={{ textDecoration: "none" }}>
+                  <Link to="/authentication/sign-up" style={{ textDecoration: "none" }}>
                     <MDButton variant="contained" color="light" size="small">
                       Agregar Usuario
                     </MDButton>

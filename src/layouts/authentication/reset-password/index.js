@@ -1,6 +1,9 @@
 // @mui material components
 import Card from "@mui/material/Card";
 
+// react-router-dom components
+import { Link } from "react-router-dom";
+
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -54,6 +57,23 @@ function Cover() {
               >
                 Restablecer contraseña
               </MDButton>
+              <MDBox mt={3} mb={1} textAlign="center">
+                <MDTypography variant="button" color="text">
+                  ¿Ya tienes cuenta ?{" "}
+                  <MDTypography
+                    component={Link}
+                    to="/authentication/sign-in"
+                    variant="button"
+                    fontWeight="medium"
+                    textGradient
+                    sx={{
+                      color: "#7a51b3",
+                    }}
+                  >
+                    Iniciar sesión
+                  </MDTypography>
+                </MDTypography>
+              </MDBox>
             </MDBox>
           </MDBox>
         </MDBox>

@@ -25,7 +25,7 @@ const routes = [
     name: "Listado tiendas",
     key: "tables",
     icon: <Icon fontSize="small">table_view</Icon>,
-    route: "/tables",
+    route: "/Tablas",
     component: <Stores />,
   },
   {
@@ -33,7 +33,7 @@ const routes = [
     name: "Usuarios",
     key: "profile",
     icon: <Icon fontSize="small">person</Icon>,
-    route: "/profile",
+    route: "/Usuarios",
     component: <Profile />,
   },
   {
@@ -43,7 +43,7 @@ const routes = [
     icon: <Icon fontSize="small">login</Icon>,
     route: "/authentication/sign-in",
     component: <SignIn />,
-    hidden: true,
+    hidden: true, //si desean ocultar el item del menu lateral, solo deben agregar hidden: true
   },
   {
     type: "collapse",
@@ -59,7 +59,7 @@ const routes = [
     name: "Reporte auditoria",
     key: "reportAuditoria",
     icon: <Icon fontSize="small">assessment</Icon>,
-    route: "/reporteAuditoria",
+    route: "/Reportes-auditoria",
     component: <ReporteAuditoria />,
   },
   {
@@ -75,8 +75,9 @@ const routes = [
     name: "Recuperar contraseña",
     key: "ResetPasswordCover",
     icon: <Icon fontSize="small">password</Icon>,
-    route: "/ResetPasswordCover",
+    route: "/authentication/reset-password",
     component: <ResetPassword />,
+    hidden: true,
   },
 ];
 
